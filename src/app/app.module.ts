@@ -19,6 +19,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { ExpenseTableComponent } from './components/features/expense/expense-table/expense-table.component';
 import { GenericTableComponent } from './components/shared/generic-table/generic-table.component';
 import { ExpenseTypeTableComponent } from './components/features/expense-type/expense-type-table/expense-type-table.component';
+import { ExpenseFormComponent } from './components/features/expense/expense-form/expense-form.component';
+import { ExpenseTypeFormComponent } from './components/features/expense-type/expense-type-form/expense-type-form.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { ExpenseTypeTableComponent } from './components/features/expense-type/ex
     GenericTableComponent,
     ExpenseTableComponent,
     ExpenseTypeTableComponent,
+    ExpenseFormComponent,
+    ExpenseTypeFormComponent,
   ],
   imports: [
     AppRoutingModule,

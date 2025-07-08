@@ -32,7 +32,7 @@ export class LayoutComponent implements OnInit {
           },
         ],
       },
-       {
+      {
         label: 'Tipos de despesas',
         icon: 'pi pi-list',
         items: [
