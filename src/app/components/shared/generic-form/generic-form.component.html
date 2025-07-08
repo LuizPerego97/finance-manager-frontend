@@ -1,0 +1,64 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-grid">
+  <div *ngFor="let field of fields" class="form-field">
+    <label [for]="field.name">{{ field.label }}</label>
+
+    <!-- TEXT -->
+    <input
+      *ngIf="field.type === 'text'"
+      [id]="field.name"
+      type="text"
+      class="p-inputtext p-component"
+      [formControlName]="field.name"
+    />
+
+    <!-- NUMBER -->
+    <p-inputNumber
+      *ngIf="field.type === 'number'"
+      [inputId]="field.name"
+      [formControlName]="field.name"
+      mode="decimal"
+      [minFractionDigits]="2"
+    ></p-inputNumber>
+
+    <!-- DATE -->
+    <p-calendar
+      *ngIf="field.type === 'date'"
+      [inputId]="field.name"
+      dateFormat="dd/mm/yy"
+      [showIcon]="true"
+      [formControlName]="field.name"
+    ></p-calendar>
+
+    <!-- DROPDOWN -->
+    <p-dropdown
+      *ngIf="field.type === 'dropdown'"
+      [inputId]="field.name"
+      [options]="field.options!"
+      [optionLabel]="field.optionLabel!"
+      [optionValue]="field.optionValue!"
+      [formControlName]="field.name"
+      placeholder="Selecione"
+    ></p-dropdown>
+
+    <div *ngIf="isInvalid(field.name)" class="error">
+      {{ field.label }} é obrigatório
+    </div>
+  </div>
+
+  <div class="form-button">
+    <p-button
+      label="Salvar"
+      class="submit-button"
+      type="submit"
+      [disabled]="form.invalid"
+    ></p-button>
+
+    <p-button
+      *ngIf="form.get('id')?.value"
+      label="Deletar"
+      class="delete-button"
+      (click)="onDelete()"
+      severity="danger"
+    ></p-button>
+  </div>
+</form>

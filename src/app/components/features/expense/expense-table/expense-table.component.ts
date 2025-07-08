@@ -23,7 +23,7 @@ export class ExpenseTableComponent implements OnInit {
     this.columns = [
       { field: 'amount',  header: 'Valor', pipe: this.currency },
       { field: 'description', header: 'Descrição' },
-      { field: 'expenseDecription', header: 'Tipo' },
+      { field: 'expenseDescription', header: 'Tipo' },
       { field: 'date', header: 'Data', pipe: this.date }
     ];
   }

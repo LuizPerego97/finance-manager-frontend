@@ -1,1 +1,30 @@
-<p>expense-type-form works!</p>
+<form [formGroup]="expenseTypeForm" (ngSubmit)="submitForm()" class="form-grid">
+  <div class="form-field">
+    <label for="description">Descrição</label>
+    <input
+      id="description"
+      type="text"
+      formControlName="description"
+      placeholder="Descrição opcional"
+      class="p-inputtext p-component"
+    />
+  </div>
+
+  <div class="form-button">
+    <div>
+      <p-button
+        label="Salvar despesa"
+        class="submit-button"
+        type="submit"
+        [disabled]="expenseTypeForm.invalid"
+      ></p-button>
+    </div>
+    <div *ngIf="expenseTypeForm.get('id')?.value">
+      <p-button
+        label="Deletar despesa"
+        class="delete-button"
+        (click)="deleteData(expenseTypeForm.get('id')?.value)"
+      />
+    </div>
+  </div>
+</form>
