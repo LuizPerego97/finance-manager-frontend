@@ -32,6 +32,22 @@ export class LayoutComponent implements OnInit {
           },
         ],
       },
+       {
+        label: 'Tipos de despesas',
+        icon: 'pi pi-list',
+        items: [
+          {
+            label: 'Todas',
+            icon: 'pi pi-table',
+            routerLink: '/expense-types',
+          },
+          {
+            label: 'Nova',
+            icon: 'pi pi-plus',
+            routerLink: '/expense-types/form',
+          },
+        ],
+      },
     ];
   }
 }

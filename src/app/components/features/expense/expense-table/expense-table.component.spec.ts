@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableAllComponent } from './table-all.component';
+import { ExpenseTableComponent } from './expense-table.component';
 
-describe('TableAllComponent', () => {
-  let component: TableAllComponent;
-  let fixture: ComponentFixture<TableAllComponent>;
+describe('ExpenseTableComponent', () => {
+  let component: ExpenseTableComponent;
+  let fixture: ComponentFixture<ExpenseTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableAllComponent ]
+      declarations: [ ExpenseTableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TableAllComponent);
+    fixture = TestBed.createComponent(ExpenseTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

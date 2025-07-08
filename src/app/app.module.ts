@@ -5,23 +5,30 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ExpenseFormComponent } from './components/expense-form/expense-form.component';
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
-import { TableAllComponent } from './components/table-all/table-all.component';
 import { TableModule } from 'primeng/table';
 import { MessageService } from 'primeng/api';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MenubarModule } from 'primeng/menubar';
+import { ExpenseTableComponent } from './components/features/expense/expense-table/expense-table.component';
+import { GenericTableComponent } from './components/shared/generic-table/generic-table.component';
+import { ExpenseTypeTableComponent } from './components/features/expense-type/expense-type-table/expense-type-table.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ExpenseFormComponent, TableAllComponent, LayoutComponent],
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    GenericTableComponent,
+    ExpenseTableComponent,
+    ExpenseTypeTableComponent,
+  ],
   imports: [
     AppRoutingModule,
     BrowserModule,
@@ -35,10 +42,9 @@ import { MenubarModule } from 'primeng/menubar';
     CalendarModule,
     TableModule,
     FormsModule,
-    MenubarModule
-    
+    MenubarModule,
   ],
-  providers: [MessageService],
+  providers: [MessageService, CurrencyPipe, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

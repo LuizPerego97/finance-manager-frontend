@@ -1,0 +1,18 @@
+<div class="table-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+  <h2>Despesas</h2>
+  <button
+    pButton
+    type="button"
+    label="Nova Despesa"
+    icon="pi pi-plus"
+    (click)="router.navigate(['/expenses/form'])"
+  ></button>
+</div>
+
+<app-generic-table
+  [data]="expenses"
+  [columns]="columns"
+  dataKey="id"
+  [responsiveLayout]="'scroll'"
+  (rowSelect)="onSelect($event)"
+></app-generic-table>
