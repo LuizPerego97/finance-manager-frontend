@@ -5,7 +5,7 @@ export class Expense {
     amount!: number;
     date!: Date;
     expenseTypeId?: number;
-    expenseDecription?: string;
+    expenseDescription?: string;
     type!: ExpenseType;
     description?: string;
 }
