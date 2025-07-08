@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'finance-manager-frontend';
-}
+  selectedExpenseId: number | null = null;
+
+  onExpenseSelected(id: number) {
+    this.selectedExpenseId = id;
+  }}
