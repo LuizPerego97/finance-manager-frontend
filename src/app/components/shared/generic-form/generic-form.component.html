@@ -53,12 +53,13 @@
       [disabled]="form.invalid"
     ></p-button>
 
-    <p-button
-      *ngIf="form.get('id')?.value"
-      label="Deletar"
-      class="delete-button"
-      (click)="onDelete()"
-      severity="danger"
-    ></p-button>
+    <div *ngIf="isEditMode ">
+      <p-button
+        label="Deletar"
+        class="delete-button"
+        (click)="onDelete()"
+        severity="danger"
+      ></p-button>
+    </div>
   </div>
 </form>

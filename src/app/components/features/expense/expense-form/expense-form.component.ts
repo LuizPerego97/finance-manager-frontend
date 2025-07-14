@@ -17,6 +17,7 @@ export class ExpenseFormComponent implements OnInit {
   expenseFormData: any = {};
   fields: FormFieldDef[] = [];
   expense!: Expense;
+  entityId!: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +28,7 @@ export class ExpenseFormComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
+    this.entityId= +id!;
 
     if (id) {
       forkJoin({
@@ -42,7 +44,6 @@ export class ExpenseFormComponent implements OnInit {
         this.setupFields(types);
       });
     } else {
-      // Apenas os tipos de despesa
       this.expenseTypeService.getAll().subscribe((types) => {
         this.setupFields(types);
         this.formMode = FormMode.Create;
@@ -82,9 +83,6 @@ export class ExpenseFormComponent implements OnInit {
   }
 
 onSubmit(data: any) {
-  console.log('Dados do form:', data);
-  console.log('Objeto original carregado:', this.expense);
-
   const updatedExpense = {
     ...this.expense, 
     ...data          

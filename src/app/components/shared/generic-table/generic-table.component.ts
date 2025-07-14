@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -32,7 +33,11 @@ export class GenericTableComponent<T> {
     this.router.navigate([`/${this.routePrefix}/form`, id]);
   }
 
-  transform(value: any, pipe?: PipeTransform): any {
-    return pipe ? pipe.transform(value) : value;
+  transform(value: any, pipe?: PipeTransform, pipeArgs?: any[]): any {
+    if (pipe instanceof CurrencyPipe) {
+      return pipe.transform(value, 'BRL', 'symbol', '1.2-2', 'pt-BR');
+    }
+
+    return pipe ? pipe.transform(value, ...(pipeArgs || [])) : value;
   }
 }
