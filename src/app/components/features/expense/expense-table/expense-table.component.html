@@ -5,7 +5,7 @@
     type="button"
     label="Nova Despesa"
     icon="pi pi-plus"
-    (click)="router.navigate(['/expenses/form'])"
+    (click)="router.navigate(['/gastos/formulario'])"
   ></button>
 </div>
 
@@ -14,6 +14,6 @@
   [columns]="columns"
   dataKey="id"
   [responsiveLayout]="'scroll'"
-  [routePrefix]="'expenses'"
+  [routePrefix]="'gastos'"
   (rowSelect)="onSelect($event)"
 ></app-generic-table>

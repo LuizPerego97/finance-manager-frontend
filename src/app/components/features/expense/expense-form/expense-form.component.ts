@@ -101,6 +101,6 @@ onSubmit(data: any) {
   }
 
   navigateToTable() {
-    this.router.navigate(['/expenses']);
+    this.router.navigate(['/gastos']);
   }
 }

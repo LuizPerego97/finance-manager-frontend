@@ -70,6 +70,6 @@ export class ExpenseTypeFormComponent implements OnInit {
   }
 
   navigateToTable() {
-    this.router.navigate(['/expense-types']);
+    this.router.navigate(['/tipos-gastos']);
   }
 }

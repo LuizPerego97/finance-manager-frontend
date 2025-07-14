@@ -13,7 +13,7 @@
     type="button"
     label="Nova tipo de despesa"
     icon="pi pi-plus"
-    (click)="router.navigate(['/expense-types/form'])"
+    (click)="router.navigate(['/tipos-gastos/formulario'])"
   ></button>
 </div>
 
@@ -22,6 +22,6 @@
   [columns]="columns"
   dataKey="id"
   [responsiveLayout]="'scroll'"
-  [routePrefix]="'expense-types'"
+  [routePrefix]="'tipos-gastos'"
   (rowSelect)="onSelect($event)"
 ></app-generic-table>

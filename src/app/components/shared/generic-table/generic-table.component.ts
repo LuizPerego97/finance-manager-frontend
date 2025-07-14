@@ -30,7 +30,7 @@ export class GenericTableComponent<T> {
   onRowSelect(row: any) {
     this.rowSelect.emit(row);
     const id = (row as any)[this.dataKey];
-    this.router.navigate([`/${this.routePrefix}/form`, id]);
+    this.router.navigate([`/${this.routePrefix}/formulario`, id]);
   }
 
   transform(value: any, pipe?: PipeTransform, pipeArgs?: any[]): any {

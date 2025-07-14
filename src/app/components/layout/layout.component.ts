@@ -23,12 +23,12 @@ export class LayoutComponent implements OnInit {
           {
             label: 'Todas',
             icon: 'pi pi-table',
-            routerLink: '/expenses',
+            routerLink: '/gastos',
           },
           {
             label: 'Nova',
             icon: 'pi pi-plus',
-            routerLink: '/expenses/form',
+            routerLink: '/gastos/formulario',
           },
         ],
       },
@@ -39,12 +39,12 @@ export class LayoutComponent implements OnInit {
           {
             label: 'Todas',
             icon: 'pi pi-table',
-            routerLink: '/expense-types',
+            routerLink: '/tipos-gastos',
           },
           {
             label: 'Nova',
             icon: 'pi pi-plus',
-            routerLink: '/expense-types/form',
+            routerLink: '/tipos-gastos/formulario',
           },
         ],
       },

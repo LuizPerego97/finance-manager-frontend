@@ -12,13 +12,13 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: 'expenses', component: ExpenseTableComponent },
-      { path: 'expenses/form', component: ExpenseFormComponent },
-      { path: 'expenses/form/:id', component: ExpenseFormComponent },
+      { path: 'gastos', component: ExpenseTableComponent },
+      { path: 'gastos/formulario', component: ExpenseFormComponent },
+      { path: 'gastos/formulario/:id', component: ExpenseFormComponent },
       
-      { path: 'expense-types', component: ExpenseTypeTableComponent },
-      { path: 'expense-types/form', component: ExpenseTypeFormComponent },
-      { path: 'expense-types/form/:id', component: ExpenseTypeFormComponent },
+      { path: 'tipos-gastos', component: ExpenseTypeTableComponent },
+      { path: 'tipos-gastos/formularios', component: ExpenseTypeFormComponent },
+      { path: 'tipos-gastos/formulario/:id', component: ExpenseTypeFormComponent },
     ],
   },
 ];
